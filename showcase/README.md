@@ -38,7 +38,7 @@ Usage
 
 To run a container:
     
-    docker run -p 8080:8080 -p 8001:8001 -d --name jbpm-workbench jboss/jbpm-workbench-showcase:latest
+    docker run -p 8080:8080 -p 8001:8001 -p 9990:9990 -d --name jbpm-workbench jboss/jbpm-workbench-showcase:latest
 
 Once container and web applications started, you can navigate to it using one of the users described in section `Users and roles`, using the following URL:             
 
