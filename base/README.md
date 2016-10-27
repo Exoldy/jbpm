@@ -37,7 +37,7 @@ Usage
 
 To run a container:
     
-    docker run -p 8080:8080 -p 8001:8001 -d --name jbpm-workbench exoldy/jbpm-workbench:latest
+    docker run -p 8080:8080 -p 8001:8001 -p 9990:9990 -d --name jbpm-workbench exoldy/jbpm-workbench:latest
 
 Once container and web applications started, you can navigate into the jBPM Workbench at:
 
