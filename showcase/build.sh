@@ -4,7 +4,7 @@
 # jBPM Workbench Showcase - Docker image build script
 # ***************************************************
 
-IMAGE_NAME="jboss/jbpm-workbench-showcase"
+IMAGE_NAME="exoldy/jbpm-workbench-showcase"
 IMAGE_TAG="latest"
 
 # Build the container image.
