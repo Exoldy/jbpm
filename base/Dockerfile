@@ -3,7 +3,7 @@
 ###########################################################################
 
 ####### BASE ############
-FROM jboss/wildfly:9.0.0.Final
+FROM jboss/wildfly:10.1.0.Final
 
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
@@ -11,8 +11,8 @@ MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
 ####### ENVIRONMENT ############
 ENV JBOSS_BIND_ADDRESS 0.0.0.0
 ENV KIE_REPOSITORY https://repository.jboss.org/nexus/content/groups/public-jboss
-ENV KIE_VERSION 6.4.0.Final
-ENV KIE_CLASSIFIER wildfly8
+ENV KIE_VERSION 6.5.0.Final
+ENV KIE_CLASSIFIER wildfly10
 ENV KIE_CONTEXT_PATH jbpm-console
 ENV DASHBUILDER_CONTEXT_PATH dashbuilder
 ENV JAVA_OPTS -XX:MaxPermSize=256m -Xms256m -Xmx512m
