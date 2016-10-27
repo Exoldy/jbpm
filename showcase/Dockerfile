@@ -3,7 +3,7 @@
 #################################################################################
 
 ####### BASE ############
-FROM exoldy/jbpm-workbench:latest
+FROM exoldy/jbpm-workbench:6.5.0.Final
 
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
