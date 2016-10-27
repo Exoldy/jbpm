@@ -21,20 +21,23 @@ Introduction
 
 The image contains:  
              
-* JBoss Wildfly 8.2.0.Final
+* JBoss Wildfly 9.0.0.Final
 * jBPM Workbench 6.4.0.Final
 * jBPM Dashbuilder 6.4.0.Final
 
+This image it is a fork from jboss/jbpm-workbench with a few changes:
+ using Wildfly 9, java 8
+
 This image provides the jBPM Workbench. It's intended to be extended so you can add your custom configurations.                 
 
-If you don't want to extend this image and you just want to try jBPM Workbench take a look at the `jboss/jbpm-workbench-showcase:latest` Docker image, it contains some default configurations.              
+If you don't want to extend this image and you just want to try jBPM Workbench take a look at the `exoldy/jbpm-workbench-showcase:latest` Docker image, it contains some default configurations.              
 
 Usage
 -----
 
 To run a container:
     
-    docker run -p 8080:8080 -p 8001:8001 -d --name jbpm-workbench jboss/jbpm-workbench:latest
+    docker run -p 8080:8080 -p 8001:8001 -d --name jbpm-workbench exoldy/jbpm-workbench:latest
 
 Once container and web applications started, you can navigate into the jBPM Workbench at:
 
@@ -215,7 +218,7 @@ Release notes
 
 **6.4.0.Final**
 
-* Use Wildfly `8.2.0.Final`             
+* Use Wildfly `9.0.0.Final`             
 * Upgrade app to version `latest` = (6.4.0.Final)         
 * Disabled examples (no internet connection required at startup)               
 * Added `KIE_DEMO` environment variable to disable examples and demos if host do not have internet connection             
