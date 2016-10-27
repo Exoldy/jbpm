@@ -17,8 +17,8 @@ ENV KIE_SERVER_PROFILE standalone-full-jbpm
 ADD etc/standalone-full-jbpm.xml $JBOSS_HOME/standalone/configuration/standalone-full-jbpm.xml
 ADD etc/jbpm-users.properties $JBOSS_HOME/standalone/configuration/jbpm-users.properties
 ADD etc/jbpm-roles.properties $JBOSS_HOME/standalone/configuration/jbpm-roles.properties
-ADD etc/jbpm-roles.properties $JBOSS_HOME/standalone/configuration/mgmt-users.properties
-ADD etc/jbpm-roles.properties $JBOSS_HOME/standalone/configuration/mgmt-groups.properties
+ADD etc/mgmt-users.properties $JBOSS_HOME/standalone/configuration/mgmt-users.properties
+ADD etc/mgmt-groups.properties $JBOSS_HOME/standalone/configuration/mgmt-groups.properties
 
 # Added files are chowned to root user, change it to the jboss one.
 USER root
