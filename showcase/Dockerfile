@@ -29,7 +29,7 @@ chown jboss:jboss $JBOSS_HOME/standalone/configuration/mgmt-users.properties && 
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/mgmt-groups.properties && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/application-users.properties && \ 
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/application-roles.properties && \
-jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-jbpm.xml && \
+chown jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-jbpm.xml && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/jbpm-roles.properties
 
 # Switchback to jboss user
