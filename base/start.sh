@@ -12,8 +12,8 @@
 #
 
 CONTAINER_NAME="jbpm-workbench"
-IMAGE_NAME="jboss/jbpm-workbench"
-IMAGE_TAG="latest"
+IMAGE_NAME="exoldy/jbpm-workbench"
+IMAGE_TAG="6.5.0.Final"
 
 function usage
 {
