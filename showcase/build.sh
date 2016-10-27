@@ -5,7 +5,7 @@
 # ***************************************************
 
 IMAGE_NAME="exoldy/jbpm-workbench-showcase"
-IMAGE_TAG="latest"
+IMAGE_TAG="6.5.0.Final"
 
 # Build the container image.
 echo "Building the Docker container for $IMAGE_NAME:$IMAGE_TAG.."
