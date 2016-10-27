@@ -13,7 +13,7 @@
 
 CONTAINER_NAME="jbpm-workbench-showcase"
 IMAGE_NAME="exoldy/jbpm-workbench-showcase"
-IMAGE_TAG="latest"
+IMAGE_TAG="6.5.0.Final"
 
 function usage
 {
