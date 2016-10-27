@@ -12,7 +12,7 @@
 #
 
 CONTAINER_NAME="jbpm-workbench-showcase"
-IMAGE_NAME="jboss/jbpm-workbench-showcase"
+IMAGE_NAME="exoldy/jbpm-workbench-showcase"
 IMAGE_TAG="latest"
 
 function usage
