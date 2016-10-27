@@ -201,4 +201,4 @@ Release notes
 
 **6.4.0.Final**
 
-* See release notes for [jBPM Workbench](https://hub.docker.com/r/jboss/jbpm-workbench/) version `6.4.0.Final`                     
+* See release notes for [jBPM Workbench](https://hub.docker.com/r/exoldy/jbpm-workbench/) version `6.4.0.Final`                     
