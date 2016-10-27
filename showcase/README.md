@@ -21,11 +21,11 @@ Introduction
 
 The image contains:               
 
-* JBoss Wildfly 8.2.0.Final
+* JBoss Wildfly 9.0.0.Final
 * jBPM Workbench 6.4.0.Final
 * jBPM Dashbuilder 6.4.0.Final
 
-This image inherits from `jboss/jbpm-workbench:latest` and provides some additional configurations:
+This image inherits from `exoldy/jbpm-workbench:latest` and provides some additional configurations:
 
 * Default users and roles                                                       
 * Some examples            
@@ -56,7 +56,7 @@ This showcase image contains default users and roles:
 
     USER        PASSWORD    ROLE
     *************************************************
-    admin       admin       admin,analyst,kiemgmt
+    admin       admin       admin,user,analyst,kiemgmt
     krisv       krisv       admin,analyst
     john        john        analyst,Accounting,PM
     mary        mary        analyst,HR
