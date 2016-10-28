@@ -21,12 +21,12 @@ Introduction
 
 The image contains:  
              
-* JBoss Wildfly 9.0.0.Final
-* jBPM Workbench 6.4.0.Final
-* jBPM Dashbuilder 6.4.0.Final
+* JBoss Wildfly 10.1.0.Final
+* jBPM Workbench 6.5.0.Final
+* jBPM Dashbuilder 6.5.0.Final
 
 This image it is a fork from jboss/jbpm-workbench with a few changes:
- using Wildfly 9, java 8
+ using Wildfly 10, java 8
 
 This image provides the jBPM Workbench. It's intended to be extended so you can add your custom configurations.                 
 
@@ -50,7 +50,7 @@ The application have no users or roles configured, so you cannot not access it b
 
 In order to use it, at least you have to create an application user in JBoss Wildfly with role `admin`.                  
 
-If you are looking for a jBPM Workbench image that does not require to add custom configurations, try our `jboss/jbpm-workbench-showcase:latest` Docker image.
+If you are looking for a jBPM Workbench image that does not require to add custom configurations, try our `exoldy/jbpm-workbench-showcase:latest` Docker image.
 
 If you want to create your custom configuration and users, role, etc, you can take a look at section `Extending this image`                  
 
@@ -195,7 +195,7 @@ Experimenting
 
 To spin up a shell in one of the containers try:
 
-    docker run -t -i -p 8080:8080 -p 8001:8001 jboss/jbpm-workbench:latest /bin/bash
+    docker run -t -i -p 8080:8080 -p 8001:8001 exoldy/jbpm-workbench:latest /bin/bash
 
 You can then noodle around the container and run stuff & look at files etc.
 
@@ -216,10 +216,10 @@ Notes
 Release notes
 --------------
 
-**6.4.0.Final**
+**6.5.0.Final**
 
-* Use Wildfly `9.0.0.Final`             
-* Upgrade app to version `latest` = (6.4.0.Final)         
+* Use Wildfly `10.1.0.Final`       
+* Upgrade app to version `latest` = (6.5.0.Final)         
 * Disabled examples (no internet connection required at startup)               
 * Added `KIE_DEMO` environment variable to disable examples and demos if host do not have internet connection             
-* Added missing initial artifact `org.guvnor:guvnor-asset-mgmt-project:6.4.0.Final:jar` into the M2 repository. See [BZ-1263738](https://bugzilla.redhat.com/show_bug.cgi?id=1263738)                   
+* Added missing initial artifact `org.guvnor:guvnor-asset-mgmt-project:6.5.0.Final:jar` into the M2 repository. See [BZ-1263738](https://bugzilla.redhat.com/show_bug.cgi?id=1263738)                   
