@@ -45,7 +45,7 @@
 
 
     <management>
-        <security-realms>
+        <security-realms>            
             <security-realm name="ManagementRealm">
                 <authentication>
                     <local default-user="$local" skip-group-loading="true"/>
@@ -57,6 +57,11 @@
             </security-realm>
             <!-- jBPM Workbench - CUSTOM PROPERTY FILES FOR AUTHENTICATION / AUTHZ -->
             <security-realm name="ApplicationRealm">
+                <server-identities>
+                    <ssl>
+                        <keystore path="application.keystore" relative-to="jboss.server.config.dir" keystore-password="password" alias="server" key-password="password" generate-self-signed-certificate-host="localhost"/>
+                    </ssl>
+                </server-identities>
                 <authentication>
                     <local default-user="$local" allowed-users="*" skip-group-loading="true"/>
                     <properties path="jbpm-users.properties" relative-to="jboss.server.config.dir"/>
