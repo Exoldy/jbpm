@@ -21,9 +21,9 @@ Introduction
 
 The image contains:               
 
-* JBoss Wildfly 9.0.0.Final
-* jBPM Workbench 6.4.0.Final
-* jBPM Dashbuilder 6.4.0.Final
+* JBoss Wildfly 10.1.0.Final
+* jBPM Workbench 6.5.0.Final
+* jBPM Dashbuilder 6.5.0.Final
 
 This image inherits from `exoldy/jbpm-workbench:latest` and provides some additional configurations:
 
@@ -38,7 +38,7 @@ Usage
 
 To run a container:
     
-    docker run -p 8080:8080 -p 8001:8001 -p 9990:9990 -d --name jbpm-workbench jboss/jbpm-workbench-showcase:latest
+    docker run -p 8080:8080 -p 8001:8001 -p 9990:9990 -d --name jbpm-workbench exoldy/jbpm-workbench-showcase:latest
 
 Once container and web applications started, you can navigate to it using one of the users described in section `Users and roles`, using the following URL:             
 
@@ -47,7 +47,7 @@ Once container and web applications started, you can navigate to it using one of
 Please note that in this image the examples and demos are enabled by default, so you **need external connection to [GitHub](https://github.com/)**. 
 If your container runs without internet connection, please set `KIE_DEMO` the environment variable to value `false` as:                             
 
-    docker run -p 8080:8080 -p 8001:8001 -e KIE_DEMO=false -d --name jbpm-workbench jboss/jbpm-workbench-showcase:latest
+    docker run -p 8080:8080 -p 8001:8001 -e KIE_DEMO=false -d --name jbpm-workbench exoldy/jbpm-workbench-showcase:latest
 
 Users and roles
 ----------------
@@ -170,7 +170,7 @@ At this point, the default GIT root directory for the workbench will be located 
 In order to keep the git repositories between different containers you can just start the container by configuring a new host volume as:                
 
     # Use -v <SOURCE_FS_PATH>:<CONTAINER_FS_PATH>
-    docker run -p 8080:8080 -p 8001:8001 -v /home/myuser/wb_git:/opt/jboss/wildfly/mygit -d --name jbpm-workbench jboss/jbpm-workbench-showcase:MY_TAG
+    docker run -p 8080:8080 -p 8001:8001 -v /home/myuser/wb_git:/opt/jboss/wildfly/mygit -d --name jbpm-workbench exoldy/jbpm-workbench-showcase:MY_TAG
     
 As the above command, now your workbench git repository will be persistent at your local filesystem path `/home/myuser/wb_git`. So if you remove this container and start a new one just by using same shared volume, you'll find all your assets on the new workbench's container as well.                      
     
@@ -179,7 +179,7 @@ Experimenting
 
 To spin up a shell in one of the containers try:
 
-    docker run -t -i -p 8080:8080 -p 8001:8001 jboss/jbpm-workbench-showcase:latest /bin/bash
+    docker run -t -i -p 8080:8080 -p 8001:8001 exoldy/jbpm-workbench-showcase:latest /bin/bash
 
 You can then noodle around the container and run stuff & look at files etc.
 
@@ -199,6 +199,6 @@ Notes
 Release notes
 --------------
 
-**6.4.0.Final**
+**6.5.0.Final**
 
-* See release notes for [jBPM Workbench](https://hub.docker.com/r/exoldy/jbpm-workbench/) version `6.4.0.Final`                     
+* See release notes for [jBPM Workbench](https://hub.docker.com/r/exoldy/jbpm-workbench/) version `6.5.0.Final`                     
