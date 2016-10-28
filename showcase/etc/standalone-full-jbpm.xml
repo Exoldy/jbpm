@@ -32,8 +32,20 @@
         <extension module="org.wildfly.extension.undertow"/>
         <extension module="org.wildfly.iiop-openjdk"/>
     </extensions>
+    
+    <!-- jBPM Workbench - ENABLED EXAMPLE -->
+    <system-properties>
+        <property name="org.kie.demo" value="${org.kie.demo:true}"/>
+        <property name="org.kie.example" value="${org.kie.example:true}"/>
+        <property name="org.jbpm.designer.perspective" value="${org.jbpm.designer.perspective:full}"/>
+        <property name="designerdataobjects" value="${designerdataobjects:false}"/>
+        <!-- Make GIT repositories available from outside localhost. -->
+        <property name="org.uberfire.nio.git.ssh.host" value="0.0.0.0"/>
+    </system-properties>
+
+
     <management>
-        <security-realms>
+        <security-realms>            
             <security-realm name="ManagementRealm">
                 <authentication>
                     <local default-user="$local" skip-group-loading="true"/>
@@ -43,6 +55,7 @@
                     <properties path="mgmt-groups.properties" relative-to="jboss.server.config.dir"/>
                 </authorization>
             </security-realm>
+            <!-- jBPM Workbench - CUSTOM PROPERTY FILES FOR AUTHENTICATION / AUTHZ -->
             <security-realm name="ApplicationRealm">
                 <server-identities>
                     <ssl>
@@ -51,10 +64,10 @@
                 </server-identities>
                 <authentication>
                     <local default-user="$local" allowed-users="*" skip-group-loading="true"/>
-                    <properties path="application-users.properties" relative-to="jboss.server.config.dir"/>
+                    <properties path="jbpm-users.properties" relative-to="jboss.server.config.dir"/>
                 </authentication>
                 <authorization>
-                    <properties path="application-roles.properties" relative-to="jboss.server.config.dir"/>
+                    <properties path="jbpm-roles.properties" relative-to="jboss.server.config.dir"/>
                 </authorization>
             </security-realm>
         </security-realms>
@@ -354,10 +367,12 @@
             <security-domains>
                 <security-domain name="other" cache-type="default">
                     <authentication>
+                        <!-- jBPM Workbench - CUSTOM LOGIN MODULE -->
+                        <login-module code="UsersRoles" flag="required">
+                            <module-option name="usersProperties" value="${jboss.server.config.dir}/jbpm-users.properties"/>
+                            <module-option name="rolesProperties" value="${jboss.server.config.dir}/jbpm-roles.properties"/>
+                        </login-module>                        
                         <login-module code="Remoting" flag="optional">
-                            <module-option name="password-stacking" value="useFirstPass"/>
-                        </login-module>
-                        <login-module code="RealmDirect" flag="required">
                             <module-option name="password-stacking" value="useFirstPass"/>
                         </login-module>
                     </authentication>

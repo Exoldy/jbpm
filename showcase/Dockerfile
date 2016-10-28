@@ -11,22 +11,21 @@ MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
 ####### ENVIRONMENT ############
 # Use demo and examples by default in this showcase image (internet connection required).
 ENV KIE_DEMO true
+ENV KIE_SERVER_PROFILE standalone-full-jbpm
 
 ####### jBPM Workbench CUSTOM CONFIGURATION ############
+ADD etc/standalone-full-jbpm.xml $JBOSS_HOME/standalone/configuration/standalone-full-jbpm.xml
 ADD etc/jbpm-users.properties $JBOSS_HOME/standalone/configuration/jbpm-users.properties
 ADD etc/jbpm-roles.properties $JBOSS_HOME/standalone/configuration/jbpm-roles.properties
 ADD etc/mgmt-users.properties $JBOSS_HOME/standalone/configuration/mgmt-users.properties
 ADD etc/mgmt-groups.properties $JBOSS_HOME/standalone/configuration/mgmt-groups.properties
-ADD etc/application-users.properties $JBOSS_HOME/standalone/configuration/application-users.properties
-ADD etc/application-roles.properties $JBOSS_HOME/standalone/configuration/application-roles.properties
 
 # Added files are chowned to root user, change it to the jboss one.
 USER root
-RUN chown jboss:jboss $JBOSS_HOME/standalone/configuration/jbpm-users.properties && \
+RUN chown jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-jbpm.xml && \
+chown jboss:jboss $JBOSS_HOME/standalone/configuration/jbpm-users.properties && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/mgmt-users.properties && \ 
-chown jboss:jboss $JBOSS_HOME/standalone/configuration/mgmt-groups.properties && \
-chown jboss:jboss $JBOSS_HOME/standalone/configuration/application-users.properties && \ 
-chown jboss:jboss $JBOSS_HOME/standalone/configuration/application-roles.properties && \
+chown jboss:jboss $JBOSS_HOME/standalone/configuration/mgmt-groups.properties && \ 
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/jbpm-roles.properties
 
 # Switchback to jboss user
